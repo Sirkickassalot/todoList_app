@@ -1,6 +1,7 @@
 import "./App.css";
 import Header from "./components/Header";
 import styled from "styled-components";
+import TodoItem from "./components/TodoItem";
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
             <Title>Dashboard</Title>
             <Greeting>Good Morning, Isaac</Greeting>
             {[<h2>Cooking</h2>, <h2>Reading</h2>]}
+            <TodoItem />
           </TodoContent>
         </MainContent>
       </Main>
@@ -37,8 +39,19 @@ const MainContent = styled.div`
   transition: 0.3s;
 `;
 
-const TodoContent = styled.div``;
+const TodoContent = styled.div`
+  max-width: 700px;
+  width: 100%;
+`;
 
-const Title = styled.div``;
+const Title = styled.div`
+  margin: 50px 0;
+  font-size: 30px;
+  font-weight: 700;
+`;
 
-const Greeting = styled.div``;
+const Greeting = styled.div`
+  margin-bottom: 20px;
+  font-size: 36px;
+  font-weight: 800;
+`;
