@@ -10,6 +10,8 @@ const TodoList = () => {
     const addButtonHandler = () => {
         console.log('addButtonHandler')
         console.log(todo)
+        setTodos([todo, ...todos])
+        console.log(todos)
         setTodo('')
     }
 
@@ -23,7 +25,9 @@ const TodoList = () => {
                 <TodoInput value = {todo} onChange={e => setTodo(e.target.value)} />
                 <AddTodo className='fas fa-plus'  onClick={addButtonHandler}/>
             </TodoCategoryHeader>
-            <TodoItem />
+            {todos.map((todo, index) => (
+                <TodoItem key={index} todo={todo} />
+            ))}
         </Wrapper>    
     )
 }
@@ -84,5 +88,3 @@ const AddTodo = styled.i`
         cursor: pointer;
     }
 `
-
-const TodoListItems = styled.div``
