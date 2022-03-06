@@ -1,9 +1,18 @@
-import React from 'react'
+import React, { useState } from 'react'
 import TodoItem from './TodoItem'
 import styled from 'styled-components'
 
 
 const TodoList = () => {
+    const [todo, setTodo] = useState('') // keeps track of the input    
+    const [todos, setTodos] = useState([]) // keeps track of the whole list of todos making an array of todos
+
+    const addButtonHandler = () => {
+        console.log('addButtonHandler')
+        console.log(todo)
+        setTodo('')
+    }
+
     return (
         <Wrapper>
             <TodoCategoryHeader>
@@ -11,8 +20,8 @@ const TodoList = () => {
                     <i className={'fas fa-user'}/>    
                 </CategoryIcon>
                 <Title> Personal </Title>
-                <TodoInput />
-                <AddTodo className='fas fa-plus' />
+                <TodoInput value = {todo} onChange={e => setTodo(e.target.value)} />
+                <AddTodo className='fas fa-plus'  onClick={addButtonHandler}/>
             </TodoCategoryHeader>
             <TodoItem />
         </Wrapper>    
