@@ -5,7 +5,8 @@ const TodoItem = ({todo, todos, setTodos}) => {
 
     const deleteTask = () => {
         console.log(todo.id, todo.title)
-        setTodos(todos.filter(todo => todo.id != todo.id))
+        const currentTodoId = todo.id
+        setTodos(todos.filter(todo => todo.id != currentTodoId))
     }
 
     return (
