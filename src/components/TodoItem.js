@@ -5,7 +5,7 @@ const TodoItem = ({todo}) => {
     return (
         <TodoListItem>
             <Checkbox className='far fa-circle' />
-            <input style={{ textDecoration: '' }} value={todo} />
+            <input style={{ textDecoration: '' }} value={todo.title} />
             
             <SaveTodo className='fas fa-check' />
             <DeleteTodo className='fas fa-trash-alt' />
