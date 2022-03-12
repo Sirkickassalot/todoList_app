@@ -38,7 +38,7 @@ const TodoList = () => {
         <AddTodo className="fas fa-plus" onClick={addButtonHandler} />
       </TodoCategoryHeader>
       {todos.map((todo, index) => (
-        <TodoItem key={index} todo={todo} />
+        <TodoItem key={index} todo={todo} todos={todos} setTodos={setTodos}/>
       ))}
     </Wrapper>
   );
