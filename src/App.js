@@ -8,11 +8,29 @@ import { useState } from 'react'
 
 function App() {
   const [sidebarToggle, setsidebarToggle] = useState(true)
+
+  const todoList =  [
+    {
+      name: 'Personal',
+      color: '#fd76a1',
+      icon: 'fas fa-user'
+    },
+    {
+      name: 'Work',
+      color: '#70c4be',
+      icon: 'fas fa-briefcase'
+    },
+    {
+      name: 'Profit with React',
+      color: '#ab6ddf',
+      icon: 'fas fa-file-code'
+    }
+  ]
   return (
     <Wrapper>
       <Header />
       <Main>
-        <Sidebar sidebarToggle = {sidebarToggle} />
+        <Sidebar sidebarToggle = {sidebarToggle} todoList={todoList} />
         <MainContent style = {{ 
           width: `calc( 100vw - (${sidebarToggle ? '300px' : '70px'}))`,
           }}
