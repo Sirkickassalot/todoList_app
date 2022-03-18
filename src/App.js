@@ -4,35 +4,39 @@ import styled from "styled-components";
 //import TodoItem from "./components/TodoItem";
 import TodoList from "./components/TodoList";
 import Sidebar from "./components/Sidebar";
-import { useState } from 'react'
+import { useState } from "react";
 
 function App() {
-  const [sidebarToggle, setsidebarToggle] = useState(true)
+  const [sideBarToggle, setSideBarToggle] = useState(true);
 
-  const todoList =  [
+  const todoList = [
     {
-      name: 'Personal',
-      color: '#fd76a1',
-      icon: 'fas fa-user'
+      name: "Personal",
+      color: "#fd76a1",
+      icon: "fas fa-user",
     },
     {
-      name: 'Work',
-      color: '#70c4be',
-      icon: 'fas fa-briefcase'
+      name: "Work",
+      color: "#70c4be",
+      icon: "fas fa-briefcase",
     },
     {
-      name: 'Profit with React',
-      color: '#ab6ddf',
-      icon: 'fas fa-file-code'
-    }
-  ]
+      name: "Profit with React",
+      color: "#ab6ddf",
+      icon: "fas fa-file-code",
+    },
+  ];
   return (
     <Wrapper>
-      <Header />
+      <Header
+        sideBarToggle={sideBarToggle}
+        setSideBarToggle={setSideBarToggle}
+      />
       <Main>
-        <Sidebar sidebarToggle = {sidebarToggle} todoList={todoList} />
-        <MainContent style = {{ 
-          width: `calc( 100vw - (${sidebarToggle ? '300px' : '70px'}))`,
+        <Sidebar sideBarToggle={sideBarToggle} todoList={todoList} />
+        <MainContent
+          style={{
+            width: `calc( 100vw - (${sideBarToggle ? "300px" : "70px"}))`,
           }}
         >
           <TodoContent>
